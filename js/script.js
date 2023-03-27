@@ -80,7 +80,7 @@ function renderTasks(){
 
 function saveTasks(name, isCompleted){
     localStorage.setItem(name, isCompleted);
-
+}
 // Step 3 link to event handler 
 addTaskButton.addEventListener('click', onAddTaskClicked);
 todoListContainer.addEventListener('click', onTodoListContainerClicked);
