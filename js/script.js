@@ -15,9 +15,10 @@ function onAddTaskClicked(event) {
     newTaskInput.value = "";
     var taskHTML = template.replace("<!--Task_Name-->", taskName);
     todoListContainer.insertAdjacentHTML('afterbegin', taskHTML);
-    
+
     saveTasks(taskName, false);
 }
+
 
 function onTodoListContainerClicked(event) {
     var targetElement = event.targetElement;
@@ -35,6 +36,7 @@ function onTodoListContainerClicked(event) {
     var taskName = taskNameElement.innerText;
     saveTasks(taskName, checkbox.checked);
 }
+
 
 function showActiveTasks() {
     var tasks = document.getElementsByClassName('task');
