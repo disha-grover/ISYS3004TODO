@@ -18,6 +18,22 @@ function onAddTaskClicked(event) {
     saveTasks(taskName, false);
 }
 
+function onTodolistClicked(event) {
+    let targetElement = event.target;
+    while (!targetElement.classList.contains("task")) {
+        targetElement = targetElement.parentElement;
+    }
+    let checkbox = targetElement.querySelector(".checkbox");
+    if (checkbox.checked) {
+        targetElement.classList.add("completed");
+    } else {
+        targetElement.classList.remove("completed");
+    }
+    var taskNameElement = targetElement.querySelector(".task-name");
+    var taskName = taskNameElement.innerText;
+    saveTasks(taskName, checkbox.checked);
+}
+/*
 function onTodoListContainerClicked(event) {
     var targetElement = event.toElement;
     
@@ -31,6 +47,7 @@ function onTodoListContainerClicked(event) {
         targetElement.classList.remove("completed");
     }
 }
+*/
 function showActiveTasks() {
     var tasks = document.getElementsByClassName('task');
     for (let i = 0; i < tasks.length; i++){
